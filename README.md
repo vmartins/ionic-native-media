@@ -2,7 +2,7 @@
 
 ```
 $ npm install git+https://github.com/vmartins/cordova-plugin-media.git --save
-$ npm install npm install git+https://github.com/vmartins/ionic-native-media.git --save
+$ npm install git+https://github.com/vmartins/ionic-native-media.git --save
 ```
 
 ## [Usage Documentation](https://ionicframework.com/docs/native/media/)
