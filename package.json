@@ -1,0 +1,26 @@
+{
+  "author": {
+    "name": "ionic"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@types/cordova": "latest"
+  },
+  "deprecated": false,
+  "description": "Fork from @ionic-native/media (https://github.com/ionic-team/ionic-native/tree/v5.33.0/src/%40ionic-native/plugins/media) v5.33.0",
+  "homepage": "https://github.com/vmartins/ionic-native-media",
+  "license": "MIT",
+  "main": "bundle.js",
+  "module": "index.js",
+  "name": "@ionic-native/media",
+  "peerDependencies": {
+    "rxjs": "^5.5.0 || ^6.5.0",
+    "@ionic-native/core": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmartins/ionic-native-media.git"
+  },
+  "typings": "index.d.ts",
+  "version": "5.33.0"
+}
