@@ -53,6 +53,8 @@ export declare class MediaObject {
      */
     getDuration(): number;
 
+    getId(): string;
+
     /**
      * Starts or resumes playing an audio file.
      */
@@ -70,11 +72,6 @@ export declare class MediaObject {
      * Releases the underlying operating system's audio resources. This is particularly important for Android, since there are a finite amount of OpenCore instances for media playback. Applications should call the release function for any Media resource that is no longer needed.
      */
     release(): void;
-
-    /**
-     * Releases all the underlying operating system's audio resources. This is particularly important for Android, since there are a finite amount of OpenCore instances for media playback. Applications should call the release function for any Media resource that is no longer needed.
-     */
-    releaseAll(): void;
 
     /**
      * Sets the current position within an audio file.
@@ -210,6 +207,15 @@ export declare class MediaOriginal extends IonicNativePlugin {
      * @return {MediaObject}
      */
     create(src: string): MediaObject;
+
+    getIds(): Promise<any>;
+
+    /**
+     * Releases all the underlying operating system's audio resources. This is particularly important for Android, since there are a finite amount of OpenCore instances for media playback. Applications should call the release function for any Media resource that is no longer needed.
+     */
+    releaseAll(): void;
+
+    get(id: string): MediaObject;
 }
 
 export declare const Media: MediaOriginal;

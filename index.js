@@ -15,10 +15,12 @@ var __extends = (this && this.__extends) || (function () {
 import {
     IonicNativePlugin,
     cordovaInstance,
+    cordovaPropertyGet,
     instancePropertyGet,
     instancePropertySet,
     checkAvailability
 } from '@ionic-native/core';
+import _ from 'lodash';
 import { Observable } from 'rxjs';
 
 var MediaObject = /** @class */ (function () {
@@ -50,6 +52,10 @@ var MediaObject = /** @class */ (function () {
         return cordovaInstance(this, "getCurrentPosition", {}, arguments);
     };
 
+    MediaObject.prototype.getId = function () {
+        return cordovaInstance(this, "getId", { "sync": true }, arguments);
+    };
+
     MediaObject.prototype.getDuration = function () {
         return cordovaInstance(this, "getDuration", { "sync": true }, arguments);
     };
@@ -64,10 +70,6 @@ var MediaObject = /** @class */ (function () {
 
     MediaObject.prototype.release = function () {
         return cordovaInstance(this, "release", { "sync": true }, arguments);
-    };
-
-    MediaObject.prototype.releaseAll = function () {
-        return cordovaInstance(this, "releaseAll", {}, arguments);
     };
 
     MediaObject.prototype.seekTo = function (milliseconds) {
@@ -159,6 +161,7 @@ var MediaOriginal = /** @class */ (function (_super) {
     __extends(MediaOriginal, _super);
     function MediaOriginal() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+
         // Constants
         /**
          * @hidden
@@ -205,6 +208,16 @@ var MediaOriginal = /** @class */ (function (_super) {
          * @hidden
          */
         _this.MEDIA_ERR_NONE_SUPPORTED = 4;
+
+
+        _this.get = cordovaPropertyGet(_this, "get");
+
+        _this.getIds = function() {
+            return cordovaInstance(_this, "getIds", {}, arguments);
+        }
+
+        _this.releaseAll = cordovaPropertyGet(_this, "releaseAll");
+
         return _this;
     }
 
